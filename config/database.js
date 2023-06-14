@@ -20,7 +20,7 @@ module.exports = ({ env }) => {
           cipher: env('DATABASE_SSL_CIPHER', undefined),
           rejectUnauthorized: env.bool(
             'DATABASE_SSL_REJECT_UNAUTHORIZED',
-            false
+            true
           ),
         },
       },
@@ -67,7 +67,7 @@ module.exports = ({ env }) => {
           ),
         },
         schema: env('DATABASE_SCHEMA', 'public'),
-      },
+	},	
       pool: { min: env.int('DATABASE_POOL_MIN', 2), max: env.int('DATABASE_POOL_MAX', 10) },
     },
     sqlite: {
